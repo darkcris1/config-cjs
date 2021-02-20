@@ -7,11 +7,12 @@ You can configure in different environment such as **development**,
 to specify the environment
 create a file with this format **```{environment}.js```** in your config folder
 
-if you use [config](https://www.npmjs.com/package/config) it has similarity of the file structure
+if you use [config](https://www.npmjs.com/package/config) before, it has similarity of the file structure
 
 What's make this stand-out
 
 - Lightweight **(< 1kb)**
+- Predictable
 - Very Fast 
 - No Dependencies
 - Very Straightforward
@@ -25,7 +26,7 @@ npm i config-cjs
 
 # Usage
 
-> You need to create a ```config/``` folder in your working directory
+You need to create a ```config/``` folder in your working directory
 
 **```/config/default.js```**
 ```javascript
@@ -58,3 +59,19 @@ console.log(config.appName) //<Your App name>
 db.connect(config.dbConfig).then(()=>......)
 ```
 
+You can also use the [dotenv](https://www.npmjs.com/package/dotenv) alongside with this
+```javascript
+require("dotenv").config();
+
+const config = require("config-cjs")
+
+console.log(config.appName) //<Your App name>
+
+db.connect(config.dbConfig).then(()=>......)
+```
+
+### How to change the config directory ?
+@default **```/config```**
+```javascript
+process.env["CONFIG-DIR"] = "/configuration"
+```
