@@ -1,9 +1,11 @@
 {
 	"name": "config-cjs",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Configure your node app on much cleaner and simpler way",
 	"main": "index.js",
-	"files": ["index.js"],
+	"files": [
+		"index.js"
+	],
 	"scripts": {
 		"test": "jest .",
 		"test:dev": "jest --watchAll",
