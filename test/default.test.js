@@ -10,4 +10,5 @@ describe("Config Default Values",()=>{
 		expect(config.dbPassword).toBe("dbpassword")
 		expect(config).toEqual(defaultConfig)
 	})
+
 })
