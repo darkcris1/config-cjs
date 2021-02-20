@@ -1,5 +1,10 @@
 function importer(js = ""){
-	const filePath = process.env["CONFIG-DIR"] || process.cwd() + "/config/" + js
+	
+	let fileDir = process.env["CONFIG-DIR"] || "/config"
+	fileDir = fileDir.trim().replace(/\/$/,"") + "/"
+	
+	const filePath = process.cwd() + fileDir + js
+	
 	try {
 		return require(filePath)
 	} catch (_) {
