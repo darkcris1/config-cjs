@@ -1,6 +1,6 @@
 {
 	"name": "config-cjs",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Configure your node app on much cleaner and simpler way",
 	"main": "index.js",
 	"files": [
