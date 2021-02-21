@@ -1,3 +1,5 @@
+
+const merge = require("./mergeDeep")
 function importer(js = ""){
 	
 	let fileDir = process.env["CONFIG-DIR"] || "/config"
@@ -24,7 +26,7 @@ function init(){
 		case 'staging':
 		case 'qa':
 		case 'test':
-			def = {...def , ...importer(ENV)}
+			def = merge(def,importer(ENV))
 	}
 	
 	return def;
