@@ -6,5 +6,5 @@ module.exports = {
 		host: "localhost",
 		port: 8080
 	},
-	testValue: "This is default on any kind of environment"
+	h: "hsjsjs"
 }
