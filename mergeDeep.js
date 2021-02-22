@@ -1,14 +1,15 @@
+const isObj = (obj) => obj && obj.constructor === Object
 
-const isObj = (obj)=> obj && obj.constructor === Object;
-
-function merge(def, source){
-	for (let key in source) {
-		if (isObj(source[key]) && isObj(def[key])){
-			def[key] = merge(def[key], {...def[key],...source[key]})
-		}else {
-			def[key] = source[key]
-		}
-	}
-	return def
+function merge(def, source) {
+  for (let key in source) {
+    const $def = def[key]
+    const $source = source[key]
+    if (isObj($source) && isObj($def)) {
+      def[key] = merge($def, { ...$def, ...$source })
+    } else {
+      def[key] = $source
+    }
+  }
+  return def
 }
 module.exports = merge
